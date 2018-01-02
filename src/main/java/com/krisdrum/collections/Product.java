@@ -1,8 +1,14 @@
 package com.krisdrum.collections;
 
+import java.util.Comparator;
+
+import static java.util.Comparator.comparing;
+
 public class Product {
     private final String name;
     private final int weight;
+
+    public static final Comparator<Product> BY_WEIGHT = comparing(Product::getWeight);
 
     public Product(String name, int weight) {
         this.name = name;
