@@ -1,6 +1,6 @@
 package com.krisdrum.collections;
 
-import set.Supplier;
+import com.krisdrum.collections.set.Supplier;
 
 import static com.krisdrum.collections.ProductFixtures.door;
 import static com.krisdrum.collections.ProductFixtures.floorPanel;

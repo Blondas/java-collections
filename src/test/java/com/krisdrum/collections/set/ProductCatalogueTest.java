@@ -1,7 +1,7 @@
 package com.krisdrum.collections.set;
 
 import org.junit.Test;
-import set.ProductCatalogue;
+
 import static com.krisdrum.collections.ProductFixtures.door;
 import static com.krisdrum.collections.ProductFixtures.floorPanel;
 import static com.krisdrum.collections.ProductFixtures.window;

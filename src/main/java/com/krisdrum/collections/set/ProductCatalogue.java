@@ -1,4 +1,4 @@
-package set;
+package com.krisdrum.collections.set;
 
 import com.krisdrum.collections.Product;
 
