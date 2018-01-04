@@ -1,8 +1,8 @@
-package queues.helpdesk;
+package com.krisdrum.collections.queues.helpdesk;
 
-import queues.Category;
-import queues.Customer;
-import queues.Enquiry;
+import com.krisdrum.collections.queues.Category;
+import com.krisdrum.collections.queues.Customer;
+import com.krisdrum.collections.queues.Enquiry;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

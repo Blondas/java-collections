@@ -1,4 +1,4 @@
-package queues;
+package com.krisdrum.collections.queues;
 
 public class Customer {
     public static final Customer JACK = new Customer("Jack");
