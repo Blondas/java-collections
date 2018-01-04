@@ -6,6 +6,7 @@ import java.util.Objects;
 import static java.util.Comparator.comparing;
 
 public class Product {
+    private final int id;
     private final String name;
     private final int weight;
 
@@ -13,6 +14,13 @@ public class Product {
     public static final Comparator<Product> BY_NAME = comparing(Product::getName);
 
     public Product(String name, int weight) {
+        id = -1;
+        this.name = name;
+        this.weight = weight;
+    }
+
+    public Product(final int id, final String name, final int weight) {
+        this.id = id;
         this.name = name;
         this.weight = weight;
     }
@@ -23,6 +31,10 @@ public class Product {
 
     public int getWeight() {
         return weight;
+    }
+
+    public int getId() {
+        return id;
     }
 
     @Override

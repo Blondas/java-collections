@@ -1,4 +1,4 @@
-package com.krisdrum.collections.map;
+package com.krisdrum.collections.map.productLookupTable;
 
 import com.krisdrum.collections.Product;
 
