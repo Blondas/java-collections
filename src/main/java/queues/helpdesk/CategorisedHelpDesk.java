@@ -1,4 +1,8 @@
-package queues;
+package queues.helpdesk;
+
+import queues.Category;
+import queues.Customer;
+import queues.Enquiry;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
