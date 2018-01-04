@@ -2,6 +2,7 @@ package queues;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
+import java.util.function.Predicate;
 
 public class CategorisedHelpDesk {
     private Queue<Enquiry> enquiries = new ArrayDeque<>();
@@ -10,24 +11,28 @@ public class CategorisedHelpDesk {
         return  enquiries.offer(new Enquiry(customer, type));
     }
 
-    public void processPrinterEnquiry() {
+    public void processEnquiry(final Predicate<Enquiry>predicate, final String message) {
         final Enquiry enquiry = enquiries.peek();
-        if (enquiry != null && enquiry.getCategory() == Category.PRINTER) {
+        if (enquiry != null && predicate.test(enquiry)) {
             enquiries.remove();
-            enquiry.getCustomer().reply("Is is out of paper?");
+            enquiry.getCustomer().reply(message);
         } else {
             System.out.println("No work to do, let's have some coffee!");
         }
     }
 
+    public void processPrinterEnquiry() {
+        processEnquiry(
+                enq -> enq.getCategory() != Category.PRINTER,
+                "Is it out of paper?"
+        );
+    }
+
     public void processGeneralEnquiry() {
-        final Enquiry enquiry = enquiries.peek();
-        if (enquiry != null && enquiry.getCategory() != Category.PRINTER) {
-            enquiries.remove();
-            enquiry.getCustomer().reply("Have you tried to turn it off and on again?");
-        } else {
-            System.out.println("No work to do, let's have some coffee!");
-        }
+        processEnquiry(
+                enq -> enq.getCategory() != Category.PRINTER,
+                "Have you tried to turn it off and on again?"
+        );
     }
 
 
