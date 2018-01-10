@@ -1,4 +1,4 @@
-package com.krisdrum.collections.operations;
+package com.krisdrum.collections.operations.algorithms;
 
 import com.krisdrum.collections.Product;
 import com.krisdrum.collections.map.viewsOverMaps.ProductFixtures;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Sort {
+public class Rotate {
     public static void main(String[] args) {
         List<Product> products = new ArrayList<>();
         products.add(ProductFixtures.door);
@@ -15,11 +15,17 @@ public class Sort {
         products.add(ProductFixtures.window);
 
         System.out.println(products);
+        System.out.println();
 
-        Collections.sort(products, Product.BY_NAME);
+        Collections.rotate(products, 1);
         System.out.println(products);
+        System.out.println();
 
-        Collections.sort(products, Product.BY_WEIGHT);
+        Collections.rotate(products, 1);
+        System.out.println(products);
+        System.out.println();
+
+        Collections.rotate(products, 1);
         System.out.println(products);
     }
 }
